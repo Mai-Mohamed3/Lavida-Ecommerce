@@ -1,0 +1,173 @@
+/* تصميم شاشة التحميل */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/imeges/services.jpeg') no-repeat center center/cover;
+    display: flex;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+    overflow: hidden;
+    animation: backgroundMove 10s infinite linear;
+    border-radius: 50px;
+  }
+  
+  /* حركة للخلفية */
+  @keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 100%; }
+  }
+  
+  /* تأثير الشفافية */
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* شفافية متوسطة للخلفية */
+  }
+  /* تصميم الفقاعات */
+  .bubbles {
+    position: relative;
+    display: flex;
+    left: 50%;
+  }
+  
+  .bubbles span {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.829);
+    border-radius: 50%;
+    animation: floatUp 3s linear infinite;
+    left: calc(10% * var(--i));
+    animation-delay: calc(var(--i) * 0.3s);
+  }
+  
+  /* تأثير الحركة لأعلى */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+  /* نص التحميل */
+  #loading-screen p {
+    font-size: 64px;
+    margin-top: 20px;
+    color: white;
+    font-family: fantasy;
+    font-weight: bold;
+    font-style: oblique;
+    margin-left: 10%;
+  }
+  #loading-screen i{
+    color: #74240b;
+  }  
+
+/* General Styles */
+.services {
+    padding: 80px 20px;
+    background: #f9f9f9;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.services .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.section-title {
+    margin-bottom: 20px;
+    position: relative;
+    font-family: fantasy;
+    font-size: 60px;
+    font-weight: 600;
+    color: #74240b;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #000000;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Service Items */
+.service-item {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-item i {
+    font-size: 3rem;
+    color: #af3b18;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+.dark-mode .services{
+    background-color: #000000;
+}
+.dark-mode .service-item{
+    background-color: #555;
+}
+.dark-mode .service-item p ,.dark-mode .service-item h3 {
+    color: #fff;
+
+}
+/* Responsive Design */
+@media (min-width: 768px) {
+    .services .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

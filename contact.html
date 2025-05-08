@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <link rel="stylesheet" href="/assets/style/style.css">
+    <link rel="stylesheet" href="/assets/style/contact.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="bubbles">
+      <span style="--i:1;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:3;"></span>
+      <span style="--i:4;"></span>
+      <span style="--i:5;"></span>
+      <span style="--i:6;"></span>
+      <span style="--i:7;"></span>
+      <span style="--i:8;"></span>
+      <span style="--i:9;"></span>
+      <span style="--i:10;"></span>
+    </div>
+    <p>Welcome To La <i class="fa fa-envira"></i><span>vida</span> Website. Get in touch with us – we're here to help and answer all your questions!</p><br>
+  </div>
+
+  <div class="modal fade" id="offerModal" tabindex="-1" aria-labelledby="offerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" id="modal-dialog">
+      <div class="modal-content" id="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="offerModalLabel" data-translate="join_us_title">Join Us Today....</h2>
+          <button type="button" class="btn-close" id="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p data-translate="sign_up_text">Sign up now to unlock exclusive offers and enjoy a personalized experience tailored just for you.....</p>
+          <form class="form">
+            <div class="mb-3">
+              <label for="email" class="form-label" data-translate="email_label">Email or phone number</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email....." required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label" data-translate="password_label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter your password....." required>
+            </div>
+            <div class="mb-3">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#forgetPasswordModal" data-translate="forget_password_link">forget your password?!</a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#signUpModal" data-translate="create_account_link">Create New Account..?</a>
+            </div>
+            <button type="submit" class="btn w-70" id="submit" data-translate="sign_up_button">Sign Up Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="top">
+      <div class="mobile-nav">
+          <a href="/index.html" class="logo" data-translate="logo">La<i class="fa fa-envira"></i><span>vida</span></a>
+          <div>
+              <button class="menu-button" data-translate="menu_button"><i class="fa fa-bars"></i></button>
+          </div>
+      </div>
+      <div class="menu">
+          <button class="close-btn" data-translate="close_button"><i class="fa fa-close"></i></button>
+          <nav class="navbar1">
+              <a href="/index.html" class="logo" id="navlogo" data-translate="logo">La<i class="fa fa-envira"></i><span>vida</span></a>
+              <div class="search-bar">
+                  <i class="fa fa-search icon"></i>
+                  <input type="text" placeholder="Search with Keywords..." data-translate="search_placeholder">
+              </div>
+              <div class="buttons">
+                <a href="#" data-translate="sign_in" data-bs-toggle="modal" data-bs-target="#signUpModal">
+                  <i class="fa fa-user-plus"></i> Sign Up
+                </a>
+                <a href="#" data-translate="login" data-bs-toggle="modal" data-bs-target="#loginModal">
+                  <i class="fa fa-sign-in"></i> Login
+                </a>
+                  <a href="#" data-translate="language" class="languageToggle"><i class="fa fa-language"></i> AR</a>
+                  <a href="#">
+                    <i class="fa fa-moon-o" id="dark-mode-icon" onclick="toggleDarkMode()"></i>
+                    <i class="fa fa-sun-o" id="light-mode-icon" style="display: none;" onclick="toggleDarkMode()"></i>
+                  </a>
+              </div>
+          </nav>
+          <nav class="navbar2">
+              <a href="/index.html" data-translate="home"><i class="fa fa-home"></i> Home</a>
+              <a href="/about.html" data-translate="about"><i class="fa fa-info-circle"></i> About</a>
+              <a href="/services.html" data-translate="services"><i class="fa fa-users"></i> Services</a>
+              <a href="/contact.html" data-translate="contact"><i class="fa fa-envelope"></i> Contact</a>
+              <div class="dropdown">
+                  <a href="#" class="dropbtn" onclick="toggleDropdown(event)" data-translate="countries">
+                      <i class="fa fa-globe"></i>Countries
+                      <i class="fa fa-caret-down"></i>
+                  </a>
+                  <div class="dropdown-content">
+                      <a href="#" data-translate="egypt">Egypt</a>
+                      <a href="#" data-translate="usa">USA</a>
+                      <a href="#" data-translate="france">France</a>
+                      <a href="#" data-translate="japan">Japan</a>
+                  </div>
+              </div>
+          </nav>
+      </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content" id="modal-content2">
+          <div class="modal-header">
+              <h2 class="modal-title" id="signUpModalLabel" data-translate="sign_up_title">Sign Up</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="#" method="POST" class="form">
+                  <div class="mb-3">
+                      <label for="name" class="form-label" data-translate="full_name">Full Name</label>
+                      <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label" data-translate="email_address">Email Address</label>
+                      <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="password" class="form-label" data-translate="password">Password</label>
+                      <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="confirm-password" class="form-label" data-translate="confirm_password">Confirm Password</label>
+                      <input type="password" id="confirm-password" class="form-control" placeholder="Confirm your password" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="gender" class="form-label" data-translate="gender">Gender</label>
+                      <select id="gender" class="form-control" required>
+                          <option value="" disabled selected>Select your gender</option>
+                          <option value="male" data-translate="male">Male</option>
+                          <option value="female" data-translate="female">Female</option>
+                          <option value="other" data-translate="other">Other</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                      <label for="birth-date" class="form-label" data-translate="birth_date">Birth Date</label>
+                      <input type="date" id="birth-date" class="form-control" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="phone" class="form-label" data-translate="phone_number">Phone Number</label>
+                      <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                  </div>
+                  <button type="submit" class="btn w-70" id="sign_up" data-translate="sign_up_button">Sign Up</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content" id="modal-content3">
+          <div class="modal-header">
+              <h2 class="modal-title" id="loginModalLabel" data-translate="login_title">Login</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form action="#" method="POST" class="form">
+                  <div class="mb-3">
+                      <label for="login-email" class="form-label" data-translate="email_address">Email Address</label>
+                      <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="login-password" class="form-label" data-translate="password">Password</label>
+                      <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+                  </div>
+                  <div class="mb-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#forgetPasswordModal" data-translate="forget_password_link">forget your password?!</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#signUpModal" data-translate="create_account_link">Create New Account..?</a>
+                  </div>
+                  <button type="submit" class="btn  w-70" id="login" data-translate="login_button">Login</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Forget Password Modal -->
+<div class="modal fade" id="forgetPasswordModal" tabindex="-1" aria-labelledby="forgetPasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content" id="modal-content4">
+          <div class="modal-header">
+              <h2 class="modal-title" id="forgetPasswordModalLabel" data-translate="forget_password_title">Forgot Your Password?</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p data-translate="forget_password_text">Please enter your email address to receive a password reset link.</p>
+              <form action="#" method="POST" class="form">
+                  <div class="mb-3">
+                      <label for="forget-email" class="form-label" data-translate="email_address">Email Address</label>
+                      <input type="email" id="forget-email" class="form-control" placeholder="Enter your email" required>
+                  </div>
+                  <button type="submit" class="btn w-70" id="reset_link" data-translate="send_reset_link_button">Send Reset Link</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+    <div id="chatBot">
+      <div class="text-div">
+        <h2 data-translate="chat_with_us">Chat With Us</h2>
+        <p data-translate="chat_welcome_text">
+          Welcome to our chat system! We're here to assist you and answer all your inquiries quickly and professionally.
+        </p>
+      </div>
+      <div class="chat-div"> 
+        <div id="chatHeader" data-translate="chat_header_text">
+          Feel free to ask, we're here to help you with whatever you need!
+        </div>
+        <div id="chatBody"></div>
+        <input type="text" id="chatInput" data-translate="chat_input_placeholder" placeholder="Type your question...">
+        <button id="sendChat" data-translate="send_button">Send</button>
+      </div>
+    </div>    
+    <div class="nike-ad">
+      <div class="nike-content">
+          <h2 data-translate="nike">JUST DO IT</h2>
+          <p data-translate="nike_motivation">
+            Go strong with the latest Nike sports gear—performance starts here!</p>
+          <a href="https://www.nike.com" class="cta-btn" data-translate="nike-btn">Shop now</a>
+      </div>
+      <div class="nike-images">
+          <img src="/assets/imeges/nike.jpeg" alt="Nike Shoes" class="zoom-in">
+          <img src="/assets/imeges/nike2.jpeg" alt="Nike Outfit" class="bounce-in">
+      </div>
+    </div>
+  
+  <footer class="bg-dark text-light pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <ul class="list-unstyled">
+              <li><a href="/index.html" class="text-light text-decoration-none" data-translate="home">Home</a></li>
+              <li><a href="/about.html" class="text-light text-decoration-none" data-translate="about_us">About Us</a></li>
+              <li><a href="/services.html" class="text-light text-decoration-none" data-translate="services">Services</a></li>
+              <li><a href="#" class="text-light text-decoration-none" data-translate="blog">Blog</a></li>
+              <li><a href="/contact.html" class="text-light text-decoration-none" data-translate="call_us">Call Us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 mb-3">
+            <h1 data-translate="contact_us">Contact Us</h1>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label" data-translate="your_name">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Your Name">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label" data-translate="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder=" Enter Your Email">
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label" data-translate="your_message">Your Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Enter Your Message"></textarea>
+              </div>
+              <button type="submit" class="btn" style="background-color: rgb(255, 255, 255); border-radius: 20px; color: black;border: none; box-shadow: 5px 8px 10px gray; font-size: 20px; font-weight:bolder;" data-translate="send">Send</button>
+            </form>
+          </div>
+        </div>
+        <div class="text-center py-3 border-top">
+          <p class="mb-0" data-translate="all_rights_reserved">© 2025 All rights reserved. Designed by Mai Mohamed.</p>
+        </div>
+      </div>
+  </footer>
+      
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/assets/script/contact.js"></script>
+</body>
+</html>

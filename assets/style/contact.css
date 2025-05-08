@@ -1,0 +1,197 @@
+/* تصميم شاشة التحميل */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/imeges/contact.jpeg') no-repeat center center/cover;
+    display: flex;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+    overflow: hidden;
+    animation: backgroundMove 10s infinite linear;
+    border-radius: 50px;
+  }
+  
+  /* حركة للخلفية */
+  @keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 100%; }
+  }
+  
+  /* تأثير الشفافية */
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* شفافية متوسطة للخلفية */
+  }
+  /* تصميم الفقاعات */
+  .bubbles {
+    position: relative;
+    display: flex;
+    left: 50%;
+  }
+  
+  .bubbles span {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.829);
+    border-radius: 50%;
+    animation: floatUp 3s linear infinite;
+    left: calc(10% * var(--i));
+    animation-delay: calc(var(--i) * 0.3s);
+  }
+  
+  /* تأثير الحركة لأعلى */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+  /* نص التحميل */
+  #loading-screen p {
+    font-size: 64px;
+    margin-top: 20px;
+    color: white;
+    font-family: fantasy;
+    font-weight: bold;
+    font-style: oblique;
+    margin-left: 10%;
+
+  }
+  #loading-screen i{
+    color: #74240b;
+  }
+
+#chatBot {
+    margin-top: 230px;
+    margin-bottom: 30px;
+    width: 70%;
+    border: none;
+    background: #fff;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    justify-self: center;
+}
+
+.text-div h2{
+    font-family: fantasy;
+    font-size: 60px;
+    font-weight: 600;
+    color: #74240b;
+}
+
+.text-div p{
+    font-size: 20px;
+    padding: 5px;
+}
+
+.chat-div{
+    box-shadow: 5px 8px 15px #74240b;
+}
+
+#chatHeader {
+    background: #74240b;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#chatHeader span {
+    cursor: pointer;
+    display: flex;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+#chatBody {
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+    height: 200px;
+}
+
+#chatInput {
+    width: 60%;
+    padding: 16px;
+    border: none;
+    border-top: 1px solid #ddd;
+    outline: none;
+    background-color: rgb(212, 202, 202);    
+    border-radius: 20px;
+    margin-left: 8px;
+    margin-bottom: 10px;
+    
+}
+
+#chatInput::placeholder{
+    font-size: larger;
+}
+
+#sendChat {
+    width: 10%;
+    border: none;
+    border-top: 5px solid #3a1b11;
+    border-bottom: 5px solid #3a1b11;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 5px ;
+    margin-bottom: 10px;
+    margin-left: 204px;
+    font-size: larger;
+}
+
+#sendChat:hover{
+    background-color: grey;
+    color: black;
+}
+
+.userMessage {
+    text-align: right;
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 10px;
+    justify-self: right;
+    font-size: larger;
+}
+
+.botMessage {
+    text-align: left;
+    background: #d3d2d2;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 10px;
+    justify-self: left;
+    font-size: larger;
+}
+.dark-mode #chatBot{
+    background-color: #121212;
+}
+.dark-mode #chatBody{
+    background-color: #d3d2d2;
+}

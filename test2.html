@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typed.js Example</title>
+    <!-- إضافة مكتبة Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        .typed-cursor {
+            font-size: 1.2em;
+            color: #000;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="column right">
+        <div class="container">
+            <h2>Our Product</h2>
+            <p>
+                <span id="typed-output"></span>
+            </p>
+        </div>
+    </div>
+
+    <!-- كتابة الكود الخاص بـ Typed.js -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new Typed("#typed-output", {
+                strings: [
+                    "T-Shirts", 
+                    "Jeans", 
+                    "Jackets", 
+                    "Shoes", 
+                    "Accessories", 
+                    "Scarf", 
+                    "Wristwatch", 
+                    "Bag", 
+                    "Hat"
+                ],
+                typeSpeed: 100,         // سرعة الكتابة (كلما قل الرقم زادت السرعة)
+                backSpeed: 50,         // سرعة الحذف
+                backDelay: 1000,       // تأخير قبل الحذف
+                loop: true,            // استمرار العرض بشكل متكرر
+                smartBackspace: true   // عدم حذف النص إذا كان مشابهًا للنص التالي
+            });
+        });
+    </script>
+</body>
+</html>
